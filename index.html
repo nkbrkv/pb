@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="head">
+        <img src="media/arrow.png" alt="" class="head__item arrow">
+        <div class="head__item label">
+            <span>Городской транспорт</span>
+        </div>
+    </div>
+    <div class="button">
+        <div class="button__item button__style__1">
+        <a href="#" class="">Билет</a>
+        </div>
+        <div class="button__item button__style__2">
+        <a href="#" class="">Проездной</a>
+        </div>
+    </div>
+    <div class="section section__active">
+        <div class="section__item head__section">
+            <div class="logo">
+            <img src="media/logoTC.png" alt="">
+            </div>
+            <div class="section__text">
+                <span>Вiнниця</span><br>
+                <span>КП Вiнницька транспортна компанiя</span><br>
+                <span>300308682</span>
+            </div>
+        </div>
+        <div class="section__item content__section">
+            <div class="transport"><img src="media/tram.png" alt=""></div>
+            <div class="car">
+                <span>Вагон №</span><span class="car__number">257</span></div>
+        </div>
+        <div class="section__item footer__section">
+            <div class="footer__item date"><span class="name">Дата</span><span class="value nowDate">12.12.2019</span></div>
+            <div class="footer__item time"><span class="name">Время</span><span class="value nowTime">09:24:12</span></div>
+            <div class="footer__item people"><span class="name">Стандартный</span><span class="value">1</span></div>
+        </div>
+        <div class="section__item timer__section">
+            <div class="timer">
+                <span class="tm2">Билет для разового использования</span>
+                <span class="tm"><span class="tm tm-h">00</span>:<span class="tm tm-m">59</span>:<span class="tm tm-s">15</span></span>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        let number = prompt();
+        let d = new Date(), day=d.getDate(), month=d.getMonth() + 1, year=d.getFullYear();
+        let t = new Date(), h=t.getHours(), m=t.getMinutes(), s=t.getSeconds();
+        let nowDate = day + "." + month + "." + year;
+        if (h < 10) h = '0'+h;
+        if (m < 10) m = '0'+m;
+        if (s < 10) s = '0'+s;
+        let nowTime = h + ":" + m + ":" + s;
+
+        $(".car__number").html(number);
+        $(".nowDate").html(nowDate);
+        $(".nowTime").html(nowTime);
+
+    //TIMER start
+        let _Seconds = $('.tm-s').text(), int;
+        let _Minutes = $('.tm-m').text(), minute;
+        minute = setInterval(function () {
+            if (_Minutes > 0) {
+                _Minutes--; // вычитаем 1
+                if (_Minutes < 10) _Minutes = '0' + _Minutes;
+                $('.tm-m').text(_Minutes); // выводим получившееся значение в блок
+                console.log('Minutes: ', _Minutes);
+            } else {
+                clearInterval(int); // очищаем интервал, чтобы он не продолжал работу при _Seconds = 0
+            }
+        }, 60000);
+        int = setInterval(function() { // запускаем интервал
+            if (_Seconds > 0) {
+                _Seconds--; // вычитаем 1
+                if (_Seconds < 10) _Seconds = '0' + _Seconds;
+                $('.tm-s').text(_Seconds); // выводим получившееся значение в блок
+                console.log(_Seconds);
+                if (_Seconds == 0) $('.tm-s').text(59);
+            } else {
+                clearInterval(int); // очищаем интервал, чтобы он не продолжал работу при _Seconds = 0
+
+            }
+        }, 1000);
+    //TIMER end
+    </script>
+</div>
+</body>
+</html>

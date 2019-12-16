@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #E9E9E9;
+  font-family: "Open Sans";
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow {
+  position: absolute;
+  width: 22px;
+  height: 30px;
+  top: 5px;
+  left: 5px;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  height: 40px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+}
+.button .button__item {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #5e5e5e;
+}
+.button .button__item a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: #5e5e5e;
+}
+.button .button__style__1 {
+  border-bottom: 2px solid #80aa4e;
+}
+.button .button__style__1 a {
+  color: #80aa4e;
+}
+
+.section {
+  width: 93vw;
+  min-height: 70vh;
+  align-self: center;
+  background-color: #2b2b2b;
+  margin: 3.5vw 0;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.head__section {
+  margin-top: 15px;
+  display: flex;
+}
+.head__section .logo {
+  width: 100px;
+  height: 60px;
+  margin: 0 5px;
+}
+.head__section .logo img {
+  width: 100px;
+  height: 60px;
+}
+.head__section .section__text {
+  padding-top: 7px;
+  font-size: 12px;
+}
+
+.content__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content__section .transport img {
+  width: 200px;
+  height: 200px;
+}
+.content__section .car {
+  display: flex;
+  align-items: center;
+}
+.content__section .car span {
+  color: #5e5e5e;
+}
+.content__section .car .car__number {
+  color: #E9E9E9;
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+.footer__section {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__section .footer__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__section .footer__item .name {
+  font-size: 14px;
+  color: #5e5e5e;
+}
+.footer__section .footer__item .value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #E9E9E9;
+}
+
+.timer__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer__section .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.timer__section .timer span {
+  color: #80aa4e;
+}
+.timer__section .timer .tm {
+  font-size: 24px;
+  font-weight: 600;
+}
+.timer__section .timer .tm2 {
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */
